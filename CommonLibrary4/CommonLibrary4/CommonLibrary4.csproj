@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8B0A4285-9EEB-4BAA-9D2E-9D2D5B3530A5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CommonLibrary4</RootNamespace>
+    <AssemblyName>CommonLibrary4</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cache\CacheManager.cs" />
+    <Compile Include="Cache\Configuration\CacheSettings.cs" />
+    <Compile Include="Cache\Configuration\CacheConfigurationSection.cs" />
+    <Compile Include="Cache\Configuration\CacheElement.cs" />
+    <Compile Include="Cache\Configuration\CacheElementCollection.cs" />
+    <Compile Include="Cache\Configuration\ConfigurationICacheValidator.cs" />
+    <Compile Include="Cache\ICache.cs" />
+    <Compile Include="Cache\LocalCache.cs" />
+    <Compile Include="Cryptography\AsymmetricAlgorithm\AsymmetricCryptoBase.cs" />
+    <Compile Include="Cryptography\AsymmetricFlag.cs" />
+    <Compile Include="Cryptography\AsymmetricAlgorithm\BaseCertificate.cs" />
+    <Compile Include="Cryptography\AsymmetricAlgorithm\BaseCspParameters.cs" />
+    <Compile Include="Cryptography\AsymmetricAlgorithm\BaseXmlString.cs" />
+    <Compile Include="Cryptography\Crypto.cs" />
+    <Compile Include="Cryptography\CryptographySettings.cs" />
+    <Compile Include="Cryptography\HashAlgorithm\Hash.cs" />
+    <Compile Include="Cryptography\HashFlag.cs" />
+    <Compile Include="Cryptography\HashAlgorithm\HashMAC.cs" />
+    <Compile Include="Cryptography\IAsymmetricCrypto.cs" />
+    <Compile Include="Cryptography\ICrypto.cs" />
+    <Compile Include="Cryptography\IHash.cs" />
+    <Compile Include="Cryptography\IKeyedHash.cs" />
+    <Compile Include="Cryptography\ISymmetricCrypto.cs" />
+    <Compile Include="Cryptography\SymmetricAlgorithm\SymmetricCrypto.cs" />
+    <Compile Include="Cryptography\SymmetricFlag.cs" />
+    <Compile Include="Database\Configuration\DatabaseElement.cs" />
+    <Compile Include="Database\Configuration\ConfigurationTypeValidator.cs" />
+    <Compile Include="Database\Configuration\DatabaseSettings.cs" />
+    <Compile Include="Database\Configuration\DatabaseConfigurationSection.cs" />
+    <Compile Include="Database\Configuration\ProviderElementCollection.cs" />
+    <Compile Include="Database\Configuration\ProviderElement.cs" />
+    <Compile Include="Database\Configuration\BuilderElement.cs" />
+    <Compile Include="Database\DatabaseHelper.cs" />
+    <Compile Include="Database\DatabaseHelper.NonQuery.Part.cs" />
+    <Compile Include="Database\DatabaseHelper.Reader.Part.cs" />
+    <Compile Include="Database\DatabaseHelper.Scalar.Part.cs" />
+    <Compile Include="Database\DbCommon\ConnectionWrapper.cs" />
+    <Compile Include="Database\DbCommon\DataReaderWrapper.cs" />
+    <Compile Include="Database\DbCommon\DbProvider.cs" />
+    <Compile Include="Database\ParameterCollection.cs" />
+    <Compile Include="Database\SqlBuilder\SqlBuilderExtensions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entity\DbIncrementMetaPropertyInfo.cs" />
+    <Compile Include="Entity\DbMetaInfo.cs" />
+    <Compile Include="Entity\DbMetaPropertyInfo.cs" />
+    <Compile Include="Entity\ObjectAccessorExtenssions.cs" />
+    <Compile Include="Entity\IDbIncrementMetaPropertyInfo.cs" />
+    <Compile Include="Entity\IDbMetaInfo.cs" />
+    <Compile Include="Entity\IDbMetaPropertyInfo.cs" />
+    <Compile Include="Mapper\DataSource\IDataSourceReaderProvider.cs" />
+    <Compile Include="Mapper\DataSource\NativeDataSourceReader.cs" />
+    <Compile Include="Mapper\Metadata\MetaInfo.cs" />
+    <Compile Include="Mapper\Metadata\MetaPropertyInfo.cs" />
+    <Compile Include="Mapper\TypeMapper\ArrayListTypeMapper.cs" />
+    <Compile Include="Mapper\TypeMapper\ArrayTypeMapper.cs" />
+    <Compile Include="Mapper\TypeMapper\DictionaryTypeMapper.cs" />
+    <Compile Include="Mapper\TypeMapper\EnumTypeMapper.cs" />
+    <Compile Include="Mapper\TypeMapper\HashSetTypeMapper.cs" />
+    <Compile Include="Mapper\ITypeMapper.cs" />
+    <Compile Include="Mapper\TypeMapper\CollectionTypeMaper.cs" />
+    <Compile Include="Mapper\TypeMapper\NameValueCollectionTypeMapper.cs" />
+    <Compile Include="Mapper\NativeTypeMapper.cs" />
+    <Compile Include="Mapper\TypeMapper\ObjectTypeMapper.cs" />
+    <Compile Include="Mapper\TypeMapper\ReadOnlyCollcetionTypeMapper.cs" />
+    <Compile Include="Mapper\TypeMapper\StringTypeMapper.cs" />
+    <Compile Include="Mapper\TypeMapper\TimestampTypeMapper.cs" />
+    <Compile Include="Mapper\TypeMapper\ValueTypeTypeMapper.cs" />
+    <Compile Include="Query\AliasExpression.cs" />
+    <Compile Include="Database\SqlBatch.cs" />
+    <Compile Include="Database\DatabaseHelper.Query.Part.cs" />
+    <Compile Include="Entity\DataState.cs" />
+    <Compile Include="Entity\DynamicEntity.cs" />
+    <Compile Include="Entity\EntityBuilder.cs" />
+    <Compile Include="Entity\EntityExplain.cs" />
+    <Compile Include="Entity\FieldFlag.cs" />
+    <Compile Include="Entity\IEntity.cs" />
+    <Compile Include="Entity\IEntityExplain.cs" />
+    <Compile Include="Entity\IEntityFieldAccessor.cs" />
+    <Compile Include="Entity\ItemValue.cs" />
+    <Compile Include="Extenssions\CollectionExtenssions.cs" />
+    <Compile Include="Extenssions\OtherExtenssions.cs" />
+    <Compile Include="Extenssions\ValidationExtenssions.cs" />
+    <Compile Include="Mapper\DataSource\DataReaderSourceProvider.cs" />
+    <Compile Include="Mapper\DataSource\DataTableSourceProvider.cs" />
+    <Compile Include="Mapper\DataSource\IDataSourceReader.cs" />
+    <Compile Include="Mapper\IMappingTrigger.cs" />
+    <Compile Include="Query\DatabaseHelperExtessions.cs" />
+    <Compile Include="Common\DbValueCast.cs" />
+    <Compile Include="Mapper\IObjectAccessor.cs" />
+    <Compile Include="Mapper\IPropertyAccessor.cs" />
+    <Compile Include="Mapper\MapperException.cs" />
+    <Compile Include="Mapper\ObjectAccessorFinder.cs" />
+    <Compile Include="Mapper\Map.cs" />
+    <Compile Include="Mapper\Metadata\IMetaPropertyInfo.cs" />
+    <Compile Include="Mapper\Metadata\IMetaInfo.cs" />
+    <Compile Include="Mapper\ObjectAccessor.cs" />
+    <Compile Include="Mapper\PropertyAccessor.cs" />
+    <Compile Include="Mapper\PropertyExpression.cs" />
+    <Compile Include="Query\BinaryExpression.cs" />
+    <Compile Include="Query\CollectionExpression.cs" />
+    <Compile Include="Query\LogicalBinaryExpression.cs" />
+    <Compile Include="Query\ConstantExpression.cs" />
+    <Compile Include="Query\SimpleBinaryExpression.cs" />
+    <Compile Include="Query\SqlExpression.cs" />
+    <Compile Include="Query\ExpressionType.cs" />
+    <Compile Include="Query\FieldExpression.cs" />
+    <Compile Include="Query\FunctionExpression.cs" />
+    <Compile Include="Query\DbNullExpression.cs" />
+    <Compile Include="Query\Operator.cs" />
+    <Compile Include="Query\ParameterExpression.cs" />
+    <Compile Include="Query\Querable.cs" />
+    <Compile Include="Query\VariableNameExpression.cs" />
+    <Compile Include="Query\WildcardsExpression.cs" />
+    <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="Repository\RepositoryDatabase.cs" />
+    <Compile Include="Database\SqlBuilder\CommonBuilder.cs" />
+    <Compile Include="Database\SqlBuilder\EntityToSqlStatement.cs" />
+    <Compile Include="Database\SqlBuilder\ISqlBuilder.cs" />
+    <Compile Include="Database\SqlBuilder\MySqlStatementBuilder.cs" />
+    <Compile Include="Database\SqlBuilder\OracleStatementBuilder.cs" />
+    <Compile Include="Database\SqlBuilder\SqlOptions.cs" />
+    <Compile Include="Database\SqlBuilder\SqlServerStatementBuilder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Retrying\ExponentialBackoffInterval.cs" />
+    <Compile Include="Retrying\FixedInterval.cs" />
+    <Compile Include="Retrying\IncrementalInterval.cs" />
+    <Compile Include="Retrying\NonRetryInterval.cs" />
+    <Compile Include="Retrying\RetryingEventArgs.cs" />
+    <Compile Include="Retrying\RetryStrategy.cs" />
+    <Compile Include="Common\AppSettings.cs" />
+    <Compile Include="Common\Buffered.cs" />
+    <Compile Include="Extenssions\DataExtenssions.cs" />
+    <Compile Include="Common\OperationException.cs" />
+    <Compile Include="Extenssions\ConvertExtenssions.cs" />
+    <Compile Include="Common\DynamicKeyValueContainer.cs" />
+    <Compile Include="Common\PathBuilder.cs" />
+    <Compile Include="Common\Timestamp.cs" />
+    <Compile Include="Weblog\Collect\CollecterTypeContainer.cs" />
+    <Compile Include="Weblog\Collect\Collecters.cs" />
+    <Compile Include="Weblog\Collect\ICollecter.cs" />
+    <Compile Include="Weblog\Configuration\CollectElement.cs" />
+    <Compile Include="Weblog\Configuration\ConfigurationTypeValidator.cs" />
+    <Compile Include="Weblog\Configuration\IgnoreElementCollection.cs" />
+    <Compile Include="Weblog\Configuration\IgnoreElement.cs" />
+    <Compile Include="Weblog\Configuration\ParamElementCollection.cs" />
+    <Compile Include="Weblog\Configuration\ParamElement.cs" />
+    <Compile Include="Weblog\Configuration\WeblogConfigurationSection.cs" />
+    <Compile Include="Weblog\Configuration\WriterElement.cs" />
+    <Compile Include="Weblog\Configuration\CustomCollectElement.cs" />
+    <Compile Include="Weblog\Configuration\CustomCollectElementCollection.cs" />
+    <Compile Include="Weblog\WeblogEntry.cs" />
+    <Compile Include="Weblog\WeblogEntryCollection.cs" />
+    <Compile Include="Weblog\Weblogger.cs" />
+    <Compile Include="Weblog\WeblogHttpModule.cs" />
+    <Compile Include="Weblog\Configuration\WeblogSettings.cs" />
+    <Compile Include="Weblog\Writer\DbWeblogWriter.cs" />
+    <Compile Include="Weblog\Writer\IWeblogWriter.cs" />
+    <Compile Include="Weblog\Writer\TextWeblogWriter.cs" />
+    <Compile Include="Weblog\Writer\WeblogWriterBase.cs" />
+    <Compile Include="Weblog\Writer\MSMQWeblogWriter.cs" />
+    <Compile Include="Extenssions\WebExtenssions.cs" />
+    <Compile Include="Web\HttpClient.cs" />
+    <Compile Include="Web\RecognizeSpider.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
